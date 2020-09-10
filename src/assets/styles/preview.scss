@@ -1,0 +1,47 @@
+.preview {
+  display: none;
+  width: 75%;
+
+  @include phones {
+    width: 85%;
+  }
+
+  img {
+    object-fit: contain;
+    height: 93vh;
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  .popup__close {
+    right: 20%;
+    top: 0;
+    background-color: $yellow;
+
+    svg {
+      fill: #fff;
+      width: 15px;
+      height: 15px;
+    }
+
+    @include tablets {
+      right: -6%;
+    }
+
+    @include phones {
+      top: 5px;
+      right: 0;
+    }
+
+    @include small-phones {
+      top: -2px;
+      right: -9px;
+    }
+  }
+
+  &--show {
+    display: block;
+  }
+}

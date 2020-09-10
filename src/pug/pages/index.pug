@@ -1,0 +1,1999 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Central park'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM")
+    script(src='./assets/scripts/index.js')
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-175160820-1")
+block content
+    div(class="content" data-language="uk")
+        section(class="section main" data-section-name="main")
+            .promo__control
+                .promo__control-img
+                    +picture('main-bg', ['jpg'])
+                    +picture('main-bg2', ['jpg'])
+                    +picture('main-bg3', ['jpg'])
+                .promo__control-content
+                    .promo__control-text
+                        span наступне фото
+                    button(type="button" class="promo__control-next")
+                        +svg('arrow')
+                button(class="gallery__control-btn promo__control-btn promo__control-btn--prev")
+                    +svg('arrow')
+                button(class="gallery__control-btn promo__control-btn promo__control-btn--next")
+                    +svg('arrow')
+            .main__wrap
+                div(class="main__first main__section")
+                    div(class="promo main__promo")
+                        .container
+                            .promo__wrap
+                                h2.promo__title Серце міста твоеї мрії
+                                p(class="promo__desc promo__desc--short") ЖК Central Park - сучасний комплекс бізнес класу в центрі кращого курортного передмістя Києва
+                                a(href="#gallery" data-name="gallery" class="btn promo__btn hash-link") Детальніше
+                    .header-bottom
+                        .container
+                            .header-bottom__wrap
+                                .header-bottom__left
+                                    .language
+                                        a(href="ru/" data-language="rus" class="language__btn") РУС
+                                        a(href="/" data-language="uk" class="language__btn language__btn--current") УКР
+                                .header-bottom__right
+                                    +img('comfort-life.svg')
+                div(class="main__second main__section")
+                    div(class="promo main__promo")
+                        .container
+                            .promo__wrap
+                                h2.promo__title ЖК Central Park - епіцентр вашого комфорту!
+                                p(class="promo__desc promo__desc--short") ЖК Central Park - сучасний комплекс бізнес класу в центрі кращого курортного передмістя Києва
+                                a(href="#gallery" class="btn promo__btn hash-link") Детальніше
+                    .header-bottom
+                        .container
+                            .header-bottom__wrap
+                                .header-bottom__left
+                                    .language
+                                        a(href="ru/" data-language="rus" class="language__btn") РУС
+                                        a(href="/" data-language="uk" class="language__btn language__btn--current") УКР
+                                .header-bottom__right
+                                    +img('comfort-life.svg')
+                div(class="main__third main__section")
+                    div(class="promo main__promo")
+                        .container
+                            .promo__wrap
+                                h2.promo__title ЖК Central Park - епіцентр вашого комфорту!
+                                p(class="promo__desc promo__desc--short") ЖК Central Park - сучасний комплекс бізнес класу в центрі кращого курортного передмістя Києва
+                                a(href="#gallery" class="btn promo__btn hash-link") Детальніше
+                    .header-bottom
+                        .container
+                            .header-bottom__wrap
+                                .header-bottom__left
+                                    .language
+                                        a(href="ru/" data-language="rus" class="language__btn") РУС
+                                        a(href="/" data-language="uk" class="language__btn language__btn--current") УКР
+                                .header-bottom__right
+                                    +img('comfort-life.svg')
+        section(class="gallery section" id="gallery" data-section-name="gallery")
+            h3.visually-hidden Галерея
+            .gallery__big-imgs
+                +img('gallery-img.jpg')(data-gallery-src="./assets/images/gallery-img-mob.jpg")
+                +img('gallery-img2.jpg')(data-gallery-src="./assets/images/gallery-img2-mob.jpg")
+                +img('gallery-img3.jpg')(data-gallery-src="./assets/images/gallery-img3-mob.jpg")
+                +img('gallery-img4.jpg')(data-gallery-src="./assets/images/gallery-img4-mob.jpg")
+                +img('gallery-img2.jpg')(data-gallery-src="./assets/images/gallery-img4-mob.jpg")
+            .gallery__bottom
+                .gallery__bottom-left
+                    span.gallery__current 1/
+                    span.gallery__total 13
+                .gallery__bottom-right
+                    .gallery__control
+                        button(class="gallery__control-btn gallery__control-btn--prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn gallery__control-btn--next")
+                            +svg('arrow')
+                    .gallery__small-imgs
+                        .gallery__small-imgs-block
+                            +img('gallery-img.jpg')(data-gallery-src="./assets/images/gallery-img-mob.jpg")
+                        .gallery__small-imgs-block
+                            +img('gallery-img2.jpg')(data-gallery-src="./assets/images/gallery-img2-mob.jpg")
+                        .gallery__small-imgs-block
+                            +img('gallery-img3.jpg')(data-gallery-src="./assets/images/gallery-img3-mob.jpg")
+                        .gallery__small-imgs-block
+                            +img('gallery-img4.jpg')(data-gallery-src="./assets/images/gallery-img4-mob.jpg")
+                        .gallery__small-imgs-block
+                            +img('gallery-img2.jpg')(data-gallery-src="./assets/images/gallery-img4-mob.jpg")
+        section(class="section view" id="view" data-section-name="view")
+            .container
+                h3(class="section-title view__title") Планування<span class="dot">.</span>
+                .view__content
+                    .view__control
+                        button(type="button" class="view__control-btn view__control-btn--prev")
+                            +svg('arrow')
+                            span prev
+                        button(type="button" class="view__control-btn view__control-btn--next")
+                            span next
+                            +svg('arrow')
+                    ul.view__tabs
+                        li(class="view__tabs-item view__tabs-item--active")
+                            a.view__tab(href='#') 1кімнатні
+                            ul.view__sub-list
+                                li(class="view__sub-item view__sub-item--active")
+                                    a.view__sub-tab(href='#') 45.18м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 43.6м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 49.52м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 48.71м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 49.83м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 54.10м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 53.99м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 44.70м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 44.70м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 53.99м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 54.10м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 49.83м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 48.71м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 49.52м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 43.10м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 54.60м<sup>2</sup>
+                        li.view__tabs-item
+                            a.view__tab(href='#') 2кімнатні
+                            ul.view__sub-list
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 63.32м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 62.83м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 58.95м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 63.32м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 45.18м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 63.26м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 75.39м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 65.42м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 65.42м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 75.39м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 75.39м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 100.67м<sup>2</sup>
+                        li.view__tabs-item
+                            a.view__tab(href='#') 3кімнатні
+                            ul.view__sub-list
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 115.41м<sup>2</sup>
+                                li.view__sub-item
+                                    a.view__sub-tab(href='#') 115.41м<sup>2</sup>
+                        li.view__tabs-item
+                            a.view__tab(href='#') з терасами
+                            ul.view__sub-list
+
+                    .view__wrap
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title
+                                        | Квартира 45.18м
+                                        sup 2
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.52м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 45.18м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.52м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 14.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.33м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.31м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 3,18м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img2.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 43.6м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 43.6м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 17.58м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.90м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.75м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img3.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 49.52м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.53м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 49.52м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.53м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 24.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 4.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.78м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img4.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 48.71м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.18м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 48.71м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.18м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.75м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 4.75м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.03м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                                .view__control
+                                    .view__control-arrow
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img5.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 49.83м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.50м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 49.83м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.50м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 24.13м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.17м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.03м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img6.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 54.10м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Е
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 17.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 54.10м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 17.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.39м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 8.55м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.81м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img7.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 53.99м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Є
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 17.05м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 53.99м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 17.05м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 22.33м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 8.21м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.39м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.01м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img8.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 44.70м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Ж
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.31м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 44.70м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.31м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 16.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.90м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.66м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img9.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 44.70м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1A
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.31м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 44.70м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.31м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 16.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.90м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.66м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img10.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 53.99м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Б
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 17.05м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 53.99м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 17.05м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 22.33м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 8.21м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.39м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.01м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img11.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 54.10м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1В
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 17.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 54.10м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 17.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.39м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 8.55м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.81м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img12.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 49.83м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Г
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.50м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 49.83м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.50м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 24.13м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.17м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.03м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img13.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 48.71м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Д
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 16.18м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 48.71м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 16.18м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.75м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 4.75м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.03м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img14.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 49.52м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Е
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.53м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 49.52м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.53м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 24.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 4.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.78м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img5.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 45.18м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Ж
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.52м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 45.18м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.52м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 14.08м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.33м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 5.97м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 3.18м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/1room-img15.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 43.60м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 1Є
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 15.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 43.60м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 15.37м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 17.58м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.90м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.75м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                    .view__wrap
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title
+                                        | Квартира 63.32м
+                                        sup 2
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 29.7м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 63.32м
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 29.7м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 16.67м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.21м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Балкон
+                                                .view__wrap-info-value 5.04м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img2.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 62.83м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 27.56м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 62.83м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 27.56м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 12.52м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 9.89м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 5.99м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Балкон
+                                                .view__wrap-info-value 5.04м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img3.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 58.95м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 27.55м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 58.95м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 27.55м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 12.36м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 9.89м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 5.99м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Балкон
+                                                .view__wrap-info-value 5.04м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img4.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 63.32м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2Б
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 29.7м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 63.32м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 29.7м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 16.67м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Гардероб
+                                                .view__wrap-info-value 2.21м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 5.04м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                                .view__control
+                                    .view__control-arrow
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img6.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 63.26м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 31.09м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 63.26м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 31.09м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 14.74
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 11.27м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 6.16м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img9.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 75.39м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 32.14м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 75.39м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 32.14м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 17.92м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.72м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Тераса
+                                                .view__wrap-info-value 46.08м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img10.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 63.26м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 33.09м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 65.42м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 33.09м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 14.74м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 11.27м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 6.16м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img11.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 65.42м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2Б
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 27.98м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 65.42м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 27.98м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 12.62м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 5.38м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.5м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Тераса
+                                                .view__wrap-info-value 49.80м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img12.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 75.39м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2Б
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 32,14м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 75.39м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 32,14м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 17.92м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.79м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.72м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Тераса
+                                                .view__wrap-info-value 46.08м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img13.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 100.67м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 33.44м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 100.67м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 33.44м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.78м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.5м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Тераса
+                                                .view__wrap-info-value 32.11м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img14.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 100.67м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 2А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 33.44м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 100.67м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 33.44м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 23.78м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 6.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 4.5м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Тераса
+                                                .view__wrap-info-value 32.11м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                    .view__wrap
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/3room-img.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title
+                                        | Квартира 115.41м
+                                        sup 2
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 3А
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 43.94м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 115.41м
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 43.94м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 28.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 13.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 7.55м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+                        .view__wrap-content
+                            .view__wrap-left
+                                img(src='assets/images/2room-img2.jpg', alt='Планировка вашей квартиры пример')
+                            .view__wrap-right
+                                .view__wrap-right-content
+                                    .view__wrap-title Квартира 115.41м<sup>2</sup>
+                                    .view__wrap-top
+                                        .view__wrap-top-left
+                                            .view__wrap-info
+                                                .view__wrap-info-text Будинок
+                                                .view__wrap-info-value.view__wrap-info-value--correct 3кімнатні
+                                            .view__wrap-info
+                                                .view__wrap-info-text Поверх
+                                                .view__wrap-info-value.view__wrap-info-value--correct  4
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Житлова площа
+                                                .view__wrap-info-value 43.94м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Загальна площа
+                                                .view__wrap-info-value 115.41м<sup>2</sup>
+                                        .view__wrap-top-right
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Спальня
+                                                .view__wrap-info-value 43.94м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Кухня
+                                                .view__wrap-info-value 28.35м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Передпокій
+                                                .view__wrap-info-value 132.84м<sup>2</sup>
+                                            .view__wrap-info
+                                                .view__wrap-info-text  Санвузол
+                                                .view__wrap-info-value 7.55м<sup>2</sup>
+                                .view__wrap-bottom
+                                    .view__wrap-bottom-content
+                                        .view__wrap-text
+                                            | Зв'яжіться з нами,
+                                            br
+                                            |  чтобы узнать больше
+                                        a(href='#' class="view__link modal-link") Замовити дзвінок
+                                    .view__wrap-block
+                                        | Відділ продажу:
+                                        br
+                                        a.view__wrap-link(href='tel:+380504702534') +38 050 47-025-34
+        section(class="layout desc section" id="desc" data-section-name="desc")
+            .layout__left
+                .layout__content
+                    .layout__wrap
+                        h3(class="layout__title section-title") Про комплекс<span class="dot">.</span>
+                        p.layout__desc Central Park - ідеальне місце для тих, хто хоче оточити себе затишною атмосферою зеленого передмістя, при цьому бути в центрі найважливіших подій. Сучасний 16-поверховий комплекс розташований в центрі Бучі на перехресті соціальної, ділового і культурного життя.
+                        p.layout__desc ЖК Central Park підкорить вас зручними плануваннями, розкішшю терасних квартир і сучасною зовнішньою впорядкованістю.
+
+                    .layout__text
+                        a(href="#features" class="layout__link hash-link")
+                            +svg('big-arrow')
+                            span дізнатися про переваги
+            .layout__right
+                +img('main-bg2.jpg')
+                .layout__icon
+                    +svg('big-logo')
+        section(class="layout section features" id="features" data-section-name="features")
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 1/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Авторська архітектура та комфорт
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc Респектабельний зовні - комфортний всередині! Широкі вікна комплексу відкривають чудові панорами міста, а зручні планування гарантують варіації для дизайну. Квартири мають високі стелі 2,7-3,3м, забезпечуючи відчуття свободи та простору.
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 2/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Вигідне розташування
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc Central Park знаходиться в самому серці розвиненого міста, забезпечуючи доступ до інфраструктури й розваг. Чисте повітря, зелене оточення, та близькість столиці - ідеальний формат сучасного житла!
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 3/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Надійні технології
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc Заповнення стін пористим газоблоків, якісні вікна та утеплення мінеральною ватою гарантують комфортну атмосферу в будь-яку пору року.
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 3/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Розвинута інфраструктура
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc Для комерційних приміщень в самому ЖК відведено цілих 2 поверхи. Вони доповнять вже існуючі поруч аптеки, школи, спортзали, поштові відділення, банки й лікарні.
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 3/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Готовий до ремонту
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc До кожної квартири підведена вода і електропроводка, в приміщеннях зроблена стяжка та штукатурка. Створіть дім своєї мрії!
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+            .features__item
+                .layout__left
+                    .gallery__control
+                        button(class="gallery__control-btn features__btn-prev")
+                            +svg('arrow')
+                        button(class="gallery__control-btn features__btn-next")
+                            +svg('arrow')
+                    .layout__left-wrap
+                        div
+                            +img('main-bg3.jpg')
+                .layout__right
+                    .layout__right-wrap
+                        .layout__right-content
+                            .layout__slider
+                                span(class="layout__slider-text layout__slider-text--current") 3/
+                                span(class="layout__slider-text--total layout__slider-text") 5
+                            h4(class="features__title-small") Упорядкований для кожного
+                        h3(class="section-title features__title") Переваги<span class="dot">.</span>
+                        p.layout__desc Двір без машин включає дитячі майданчики для безпечних ігор і місця відпочинку, а підземні парковки вмістять машини власників або їх гостей
+                        button(type="button" class="modal-link features__link") Дізнатися більше по телефону
+        section(class="section map" id="map" data-section-name="map")
+            h3.visually-hidden Карта
+            .map__wrap
+            .map__info
+                .map__info-wrap
+                    button(class="map__info-btn")
+                        span Обьекты инфраструктуры
+                        +svg('arrow')
+                    .map__list
+                        div(class="map__item map__item--active map__item--2")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('parks.svg')
+                                span Парк
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="parks")
+                                    +svg('eye')
+                        div(class="map__item map__item--3")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('pharmacy.svg')
+                                span Детская поликлиника
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="pharmacy")
+                                    +svg('eye')
+                        div(class="map__item map__item--4")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('ambulance.svg')
+                                span Больница
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="ambulance")
+                                    +svg('eye')
+                        div(class="map__item map__item--5")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('learning.svg')
+                                span Банки
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="learning")
+                                    +svg('eye')
+                        div(class="map__item map__item--6")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('School.svg')
+                                span Обучение
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="bank")
+                                    +svg('eye')
+                        div(class="map__item map__item--7")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('mall.svg')
+                                span Тц
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="mall")
+                                    +svg('eye')
+                        div(class="map__item map__item--8")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('train.svg')
+                                span Электричка ж/д вокзал
+                            .map__item-right
+                                a(href="#" class="map__structur" data-map="train")
+                                    +svg('eye')
+                        div(class="map__item map__item--9")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('stadium.svg')
+                                span Стадион
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="stadium")
+                                    +svg('eye')
+                        div(class="map__item map__item--10")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('market.svg')
+                                span Маркеты
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="market")
+                                    +svg('eye')
+                        div(class="map__item map__item--11")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('market2.svg')
+                                span Рынок
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="market2")
+                                    +svg('eye')
+                        div(class="map__item map__item--12")
+                            .map__item-left
+                                .map__item-wrap
+                                    +img('post.svg')
+                                span Почта
+                            .map__item-right
+                                a(href="#" class="map__structure" data-map="post")
+                                    +svg('eye')
+        section(class="section about" id="about" data-section-name="about")
+            .container
+                .about__wrap
+                    .about__left
+                        +img('about-img.png')
+                        +img('comfort-life.svg').about__left-img
+                    .about__rigth
+                        .about__content
+                            h3(class="about__title section-title") Про забудовника<span class="dot">.</span>
+                            h4(class="about__title-small") Comfort Life — комфортне життя
+                            p.about__desc Вже більше 10 років компанія Comfort Life створює комфортне житло, яке дарує зручність та натхнення своїм власникам. Авторські проекти, сучасні технології та якісні матеріали є гарантом надійності та забезпечують зручний побут.
+                            .about__static
+                                .about__static-item
+                                    .about__static-count 46
+                                    .about__static-text Сучасних будинків побудували
+                                .about__static-item
+                                    .about__static-count 56
+                                    .about__static-text Сучасних будинків будуємо
+                            a(href="http://comfort-life.com.ua/ru/project/zhk-royal-park/" class="btn about__btn") На сайт забудовника
+        section(class="other section" id="other" data-section-name="about-desc")
+            .container
+                div(class="gallery__control other__control")
+                    button(class="gallery__control-btn other__btn-prev")
+                        +svg('arrow')
+                    button(class="gallery__control-btn other__btn-next")
+                        +svg('arrow')
+                .other__wrap
+                    .other__item
+                        .other__left
+                            .other__content
+                                h3(class="other__title section-title") Інші об'єкти забудовника<span class="dot">.</span>
+                                .other__left-block
+                                    .other__left-wrap
+                                        span.other__current 1/
+                                        span.other__total 3
+                                    h4(class="other__title-small") Royal Park - перлина зеленого передмістя
+                                p.other__desc ЖК Royal Park - респектабельний комплекс, розташований в центрі Ірпеня на перетині трьох міських парків. Зручне розташування, розвинена інфраструктура та близькість столиці забезпечує оптимальні умови для життя та бізнесу.
+                                p.other__desc У комплексі спроектовані просторі квартири, пентхауси з видовими терасами і комерційні приміщення. Комфорт і безпеку мешканців забезпечить упорядкована територія, що охороняється та підземний паркінг.
+                                a(href="#" class="btn other__btn") На сайт Royal Park
+                                .other__left-container
+                                    .slider-info
+                                        div(class="slider-info__text slider-info__text--current")
+                                        div(class="slider-info__text slider-info__text--total")
+                        .other__right
+                            .other__right-content
+                                .other__right-text «Royal Park» - комплекс для тих, хто цінує найвищий рівень життя.
+                            .other__right-wrap
+                                .other__right-item
+                                    +img('other-img.jpg')
+                    .other__item
+                        .other__left
+                            .other__content
+                                h3(class="other__title section-title") ЖК «На Прорізній» - комфортне життя в еко-районі<span class="dot">.</span>
+                                .other__left-block
+                                    .other__left-wrap
+                                        span.other__current 1/
+                                        span.other__total 3
+                                    h4(class="other__title-small") ЖК Royal Park
+                                p.other__desc Це масштабний європейський квартал, який втілив у собі всі вимоги до комфортного життя. Чисте повітря, зелене оточення, комплексна інфраструктура і всього 15 хвилин до Києва зробили його одним з найпривабливіших об'єктів для інвестування.
+                                p.other__desc Безпечний та комфортний квартал об'єднує 10 будинків авторської архітектури, дитячий садок на 3 поверхи, численні дитячі й спортивні майданчики та різноманітні місця для відпочинку.
+                                a(href="#" class="btn other__btn") На сайт Royal Park
+                                .other__left-container
+                                    .slider-info
+                                        div(class="slider-info__text slider-info__text--current")
+                                        div(class="slider-info__text slider-info__text--total")
+                        .other__right
+                            .other__right-content
+                                .other__right-text «Royal Park» - комплекс для тих, хто цінує найвищий рівень життя.
+                            .other__right-wrap
+                                .other__right-item
+                                    +img('other-img.jpg')
+                    .other__item
+                        .other__left
+                            .other__content
+                                h3(class="other__title section-title") ЖК Найкращий квартал – золотий стандарт комфортного передмістя<span class="dot">.</span>
+                                .other__left-block
+                                    .other__left-wrap
+                                        span.other__current 1/
+                                        span.other__total 3
+                                    h4(class="other__title-small") ЖК Royal Park
+                                p.other__desc «Найкращий квартал» - це новий сучасний район, в основі якого лежить затишна впорядкованість і приємне добросусідство. Комплекс об'єднує 31 будинок висотою до 4 поверхів, які гармонійно вписалися в зелене оточення.
+                                p.other__desc Самодостатній квартал має свою інфраструктуру, яка доповнюється школами, садочками та іншими об'єктами розвиненого Ірпеня. Двори комплексу закриті від машин і облаштовані спортивними майданчиками та місцями для ігор.
+                                a(href="#" class="btn other__btn") На сайт Royal Park
+                                .other__left-container
+                                    .slider-info
+                                        div(class="slider-info__text slider-info__text--current")
+                                        div(class="slider-info__text slider-info__text--total")
+                        .other__right
+                            .other__right-content
+                                .other__right-text «Royal Park» - комплекс для тих, хто цінує найвищий рівень життя.
+                            .other__right-wrap
+                                .other__right-item
+                                    +img('other-img.jpg')
+                    .other__item
+                        .other__left
+                            .other__content
+                                h3(class="other__title section-title") ЖК Найкращий квартал-2 - квартал для щасливого життя<span class="dot">.</span>
+                                .other__left-block
+                                    .other__left-wrap
+                                        span.other__current 1/
+                                        span.other__total 3
+                                    h4(class="other__title-small") ЖК Royal Park
+                                p.other__desc Екологічний супутник столиці, створений з думкою про безпеку та європейський комфорт. Він об'єднав 7 невисоких будинків, розташованих в тихому районі всього за 15 хвилинах від галасливого Києва. Головні принципи комплексу - зручний побут, приємне оточення і турбота про дітей. Вони проявляються у розвиненій інфраструктурі самого мікрорайону, гарній упорядкованій території та численних зонах для ігор та спорту.
+                                a(href="#" class="btn other__btn") На сайт Royal Park
+                                .other__left-container
+                                    .slider-info
+                                        div(class="slider-info__text slider-info__text--current")
+                                        div(class="slider-info__text slider-info__text--total")
+                        .other__right
+                            .other__right-content
+                                .other__right-text «Royal Park» - комплекс для тих, хто цінує найвищий рівень життя.
+                            .other__right-wrap
+                                .other__right-item
+                                    +img('other-img.jpg')
+                .slider-control
+                    .slider-control__item
+                        div(class="slider-control__text slider-control__text--current") 1
+                        div(class="slider-control__text slider-control__text--total") 3
+                    div(class="slider-control__item slider-control__item--dots")
+                    div(class="slider-control__item slider-control__item--arrows")
+        section(class="section paper" id="paper" data-section-name="paper")
+            .paper__decor
+                +svg('big-logo-white')
+            .container
+                .paper__content
+                    h3(class="section-title paper__title") Документы<span class="dot">.</span>
+                    .paper__content-wrap
+                        p.paper__content-desc Central Park має всі необхідні сертифікати й дозвільні документи. Ви можете ознайомитись з ними в цьому розділі або звернутися до відділу продажів за додатковою інформацією.
+                    .paper__inner-wrap
+                        .gallery__control
+                            button(class="gallery__control-btn paper__btn-prev")
+                                +svg('arrow')
+                            button(class="gallery__control-btn paper__btn-next")
+                                +svg('arrow')
+                        .paper__wrap
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") містобудівні роботи
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Urban conditions.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") експертиза
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Expertise.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") Договір про спільну діяльність
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Agreement on joint activities.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") Акт прийому-передачі
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Acceptance certificate.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") Дозвіл на будівництво
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Building permit.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") схеми фінансування
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Contract supeficion.pdf" target="_blank")
+                                            +svg('download')
+                            .paper__item
+                                .paper__top
+                                    .paper__top-img
+                                        +svg('document-icon')
+                                    .paper__top-date 14.05.2019
+                                a(href="#" class="paper__link") Документи на земельну ділянку
+                                .paper__bottom
+                                    .paper__bottom-left pdf
+                                    .paper__bottom-right
+                                        a(href="static/Contract supeficion.pdf" target="_blank")
+                                            +svg('download')
+        section(class="section contacts" id="contacts" data-section-name="contacts")
+            .contacts__map
+            .contacts__info
+                .contacts__info-wrap
+                    h3(class="contacts__title section-title") Контакти<span class="dot">.</span>
+                    h4.contacts__title-small віділ продажу ЖК Central Park
+                    .contacts__work
+                        .contacts__work-address Буча вул. Островського, 34б.
+                        .contats__work-time Години роботи: 10:00 - 19:00 <br> щодня
+                    a(href="tel:+380504702534" class="contacts__phone") +38 050 47-025-34
+                    .contacts__email
+                        .contacts__email-icon
+                            +svg('mail')
+                        a(href="#" class="contacts__email-link") Написати нам
+block footer
+    footer.footer
+        include ../includes/footer.pug
+
+block header
+    include ../includes/header.pug
+

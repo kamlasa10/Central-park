@@ -1,0 +1,110 @@
+.footer {
+    background-color: $darkBlue2;
+    padding: 21px 0;
+
+    @media (max-width: 550px) {
+        padding-top: 35px;
+        padding-bottom: 22px;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include tablets {
+            justify-content: center;
+        }
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media (max-width: 1015px) {
+            margin-bottom: 25px;
+        }
+
+        &--img {
+            img {
+                width: 163px;
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 530px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &-item {
+            margin-right: 40px;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @include tablets {
+                margin-right: 20px;
+            }
+
+            @media (max-width: 550px) {
+                margin-bottom: 15px;
+            }
+
+            &--map {
+                svg {
+                    width: 10px;
+                    height: 15px;
+                    fill: $yellow;
+                    margin-right: 12px;
+                }
+            }
+
+            &--phone {
+                svg {
+                    width: 13px;
+                    height: 13px;
+                    fill: $yellow;
+                    margin-right: 12px;
+                }
+            }
+        }
+
+        &-text {
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    &__copyright {
+        @media (max-width: 550px) {
+            padding-top: 15px;
+            border-top: 1px solid #242F3D;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+
+        }
+
+        img {
+            width: 85px;
+        }
+    }
+}

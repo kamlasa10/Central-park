@@ -1,0 +1,27 @@
+div(class="container" data-language="uk")
+    .footer__wrap
+        div(class="footer__item footer__item--img")
+            +img('logo.svg')
+        .footer__item
+            .footer__info
+                div(class="footer__info-item footer__info-item--map")
+                    +svg('map')
+                    a(href="https://www.google.com.ua/maps/place/%D0%9E%D1%82%D0%B4%D0%B5%D0%BB+%D0%BF%D1%80%D0­%BE%D0%B4%D0%B0%D0%B6+%22%D0%9D%D0%B0+%D0%9F%D1%80%D0%BE%D1%­80%D0%B5%D0%B7%D0%BD%D0%BE%D0%B9%22+(%D0%96%D0%9A+%D0%9D%D0%B0+%D0%9F%D1%80%D0%BE%D1%80%D1%96%D0%­B7%D0%BD%D1%96%D0%B9)/@50.5546778,30.2636942,17z/data=!3m1!4b1!4m5!3m4!1s0x472b31f8562dda55:0x9567fb77078b45f4!8m2!3d50.5546744!4d30.2658828?hl=ru&authuser=0" target="_blank" class="footer__info-text") Буча вул. Островського, 34б.
+                div(class="footer__info-item footer__info-item--phone")
+                    +svg('phone')
+                    a(href="tel:0445555625" class="footer__info-text") Відділ продажу: (044) 555 56 25
+        .footer__item
+            .socials
+                a(href="https://www.facebook.com/centralpark.com.ua" class="socials__link socials__link--fb")
+                    +svg('fb')
+                a(href="https://www.instagram.com/centralpark.bucha" class="socials__link socials__link--inst")
+                    +svg('inst')
+        .footer__item
+            .language
+                a(href="ru/" data-language="rus" class="language__btn") РУС
+                a(href="/" data-language="uk" class="language__btn language__btn--current") УКР
+        div(class="footer__item footer__copyright")
+            a(href="https://smarto.agency/")
+                +img('smarto.svg')
+
+                

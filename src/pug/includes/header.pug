@@ -1,0 +1,51 @@
+header(data-language="uk" class="header")
+	.container
+		.header__wrap
+			a(href="#main" class="header__logo hash-link")
+				+img('logo.svg')
+			nav(class="navigation header__navigation")
+				.navigation__content
+					.navigation__title Меню
+					ul.navigation__list
+						li.navigation__item
+							a(href="#gallery" class="navigation__link" data-name="gallery") Галерея
+						li(class="navigation__item navigation__item--hide")
+							a(href="#main" class="navigation__link" data-name="main") Головна
+						li.navigation__item
+							a(href="#view" class="navigation__link" data-name="view") Планування
+						li.navigation__item
+							a(href="#desc" class="navigation__link" data-name="desc") Про комплекс
+						li(class="navigation__item navigation__item--hide")
+							a(href="#desc" class="navigation__link" data-name="about-desc") Про Застройщика
+						li.navigation__item
+							a(href="#features" class="navigation__link" data-name="features") ПЕРЕВАГИ
+						li.navigation__item
+							a(href="#map" class="navigation__link" data-name="map") ІНФРАСТРУКТУРА
+						li.navigation__item
+							a(href="#about" class="navigation__link" data-name="about") забудовник
+						li.navigation__item
+							a(href="#paper" class="navigation__link" data-name="paper") документи
+						li.navigation__item
+							a(href="#contacts" class="navigation__link" data-name="contacts") Контакти
+					.navigation__wrap
+						div(class="navigation__text navigation__text--map")
+							+svg('map')
+							span Буча, провулок Радистів, 14 A
+						a(href="tel:0445555625" class="navigation__text navigation__text--phone")
+							+svg('phone')
+							span (044) 555 56 25
+				button(type="button" class="burger-btn")
+					+svg('cross')
+					span
+			.header__info
+				.header__info-block
+					button(type="button" class="popup__btn modal-link btn header__info-btn")
+						span Замовити дзвінок
+						.header__info-wrap
+							+svg('phone')
+					.header__info-tel +38 050 47-025-34
+
+
+
+
+

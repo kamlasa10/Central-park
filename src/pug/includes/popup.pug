@@ -1,0 +1,24 @@
+.overlay
+    div(class="popup popup__callback" data-language="uk")
+        button(class="popup__close")
+            +svg('cross')
+        .popup__img
+            +picture('gallery-img4', ['jpg'])
+        .popup__content
+            .popup__logo
+                +img('logo.svg')
+            .popup__title Давайте ми вам зателефонуємо
+            .popup__text Залиште свій номер, і ми передзвонимо вам
+            form(method="post" action="#" class="popup__form" data-popup="true")
+                .popup__block
+                    input(type="text" name="name" placeholder="Имя:*" class="popup__input")
+                .popup__block
+                    input(type="text" name="phone" placeholder="Телефон:*" class="popup__input")
+                button(type="submit" class="btn popup__btn submit__form")
+                    +svg('phone')
+                    span Чекаю дзвінка
+    div(class="preview")
+        .preview__wrap
+            button(class="popup__close" type="button")
+                +svg('cross')
+            img(src="" alt="большое изображение планировки")

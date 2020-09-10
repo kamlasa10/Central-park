@@ -1,0 +1,129 @@
+.promo {
+    position: relative;
+    &__wrap {
+        max-width: 730px;
+    }
+
+    &__title {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 25px;
+        font-size: 60px;
+        line-height: 1em;
+        font-weight: bold;
+
+        @media (max-width: 650px) {
+            font-size: 45px;
+        }
+
+        @include phones {
+            font-size: 38px;
+            line-height: 1.2em;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 10px;
+
+        &--short {
+            padding-right: 159px;
+
+            @include phones {
+                padding-right: 70px;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 66px;
+        padding: 16px 64px;
+
+        @include phones {
+            margin-top: 45px;
+        }
+    }
+
+    &__control {
+        position: absolute;
+        z-index: 1;
+        top: 33%;
+        right: 0;
+        width: 120px;
+
+        @include phones {
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 320px) {
+            right: 17px;
+        }
+
+        &-btn {
+            display: none;
+
+            @include phones {
+                display: inline-flex;
+            }
+            padding: 10px;
+
+            &--prev {
+                background-color: $beige;
+            }
+
+            &--next {
+                background-color: $yellow;
+                transform: rotate(180deg);
+            }
+        }
+
+        &-img {
+            height: 150px;
+
+            img {
+                display: none;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @media (max-width: 550px) {
+                display: none;
+            }
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+            padding: 15px 10px;
+            background-color: #fff;
+            cursor: pointer;
+
+            @media (max-width: 550px) {
+                display: none;
+            }
+        }
+
+        &-text {
+            font-size: 11px;
+            line-height: 1.5em;
+            text-transform: uppercase;
+            color: $grey;
+        }
+
+        &-next {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            svg {
+                width: 12px;
+                height: 18px;
+                fill: $yellow;
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+.features {
+    
+    @include tablets {
+        padding-bottom: 40px !important;
+    }
+
+    &__title {
+        order: -1;
+
+        &-small {
+            margin-bottom: 10px;
+            font-size: 22px;
+            line-height: 1.6em;
+            color: $darkGrey;
+            font-weight: 600;
+        }
+
+        @include tablets {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__item {
+        @include phones {
+            margin-bottom: 40px;
+        }
+    }
+
+    .slick-slide {
+        display: flex;
+        min-height: 100vh;
+
+        @include tablets {
+            flex-direction: column;
+        }
+    }
+
+    &__link {
+        padding-left: 0;
+        display: inline-flex;
+        margin-top: 50px;
+        padding-bottom: 2px;
+        border-bottom: 1px solid $yellow;
+        align-self: flex-start;
+
+        @include tablets {
+            margin-top: 30px;
+        }
+
+        @include phones {
+            margin-top: 20px;
+        }
+    }
+
+    .layout__left {
+        position: relative;
+
+        @include tablets {
+            width: 100%;
+        }
+
+        @include tablets {
+            height: 300px;
+
+            .gallery__control {
+                display: none;
+            }
+        }
+
+        &-wrap {
+            height: 100%;
+            width: 100%;
+
+            div {
+                height: 100%;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .gallery__control {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            z-index: 1;
+
+            &-btn {
+                padding: 29px;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .layout__right {
+        height: auto;
+        order: 1;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-wrap {
+            max-width: 420px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include tablets {
+            padding-top: 24%;
+            width: 100%;
+            padding-left: 52px;
+        }
+
+        @media (max-width: 600px) {
+            padding-top: 10%;
+        }
+    }
+
+    &__btn-prev {
+        background-color: $beige;
+    }
+
+    &__btn-next {
+        background-color: $yellow;
+        transform: rotate(180deg);
+    }
+}

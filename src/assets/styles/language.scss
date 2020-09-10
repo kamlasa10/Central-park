@@ -1,0 +1,40 @@
+.language {
+    display: flex;
+
+    &__btn {
+        position: relative;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        padding-right: 50px;
+        margin-right: 6px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $grey;
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+
+        &--current {
+            color: #fff;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            height: 1px;
+            width: 39px;
+            background-color: #fff;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

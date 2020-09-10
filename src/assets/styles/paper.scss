@@ -1,0 +1,214 @@
+.paper {
+    background-color: #F9F8F8;
+    position: relative;
+    background-color: #F9F8F8;
+
+    &__decor {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        
+        svg {
+            fill: none;
+            stroke: none;
+            fill: #fff;
+            width: 425px;
+            height: 457px;
+        }
+
+        @media (max-width: 550px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        order: -1;
+        margin-top: -174px;
+
+        @media (max-width: 1200px) {
+            margin-top: 0;
+        }
+    }
+
+    &__inner-wrap {
+        position: relative;
+        display: flex;
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+            max-width: 907px;
+        }
+    }
+
+    .gallery__control {
+        align-items: flex-start;
+        order: 1;
+
+        &-btn {
+            padding: 29px;
+        }
+
+        @media (max-width: 1200px) {
+            justify-content: space-between;
+        }
+
+        @media (max-width: 1050px) {
+            margin-right: 0;
+        }
+
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        &-prev {
+            background-color: $beige;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-next {
+            background-color: $yellow;
+            transform: rotate(180deg);
+            margin-right: 57px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            @media (max-width: 1050px) {
+                margin-right: 75px;
+            }
+        }
+    }
+
+    &__content {
+        padding-bottom: 50px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 110px;
+
+        @media (max-width: 1200px) {
+            padding-top: 0;
+        }
+
+        @include phones {
+            padding-top: 40px;
+        }
+
+        &-wrap {
+            order: -1;
+            margin-bottom: 50px;
+            display: flex;
+            max-width: 640px;
+
+            @media (max-width: 500px) {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-desc {
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @media (max-width: 500px) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 1050px) {
+            margin-left: 20px;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 0;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        max-width: 907px;
+
+        @media (max-width: 1200px) {
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        display: flex !important;
+        flex-direction: column;
+        min-height: 332px;
+        padding: 8px 35px 35px 30px;
+        margin-right: 80px;
+        background-color: $darkBlue;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media (max-width: 650px) {
+            margin-right: 0;
+        }
+    }
+
+    &__top {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-img {
+            svg {
+                width: 107px;
+                height: 107px;
+            }
+        }
+
+        &-date {
+            margin-top: 30px;
+            color: $yellow;
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        line-height: 1.6em;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+
+        &-left {
+            color: $yellow;
+        }
+
+        &-right {
+            svg {
+                width: 15px;
+                height: 26px;
+            }
+        }
+    }
+}

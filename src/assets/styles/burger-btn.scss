@@ -1,0 +1,72 @@
+.burger-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    z-index: 100;
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    background-color: $yellow;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    @media (max-width: 500px) {
+        right: 15px;
+    }
+
+    @include phones {
+        top: 2px;
+    }
+
+    svg {
+        display: none;
+        fill: #fff;
+    }
+
+    @include laptop {
+        display: flex;
+    }
+
+    span {
+        width: 10px;
+        height: 1px;
+        border-radius: 10px;
+        background-color: #fff;
+        display: inline-block;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 1px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        &::before {
+            transform: translateY(-4px);
+        }
+
+        &::after {
+            width: 7px;
+            transform: translateY(3px);
+        }
+    }
+
+    &--open {
+        transition: all 0.4s;
+
+        span {
+            display: none;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+}
